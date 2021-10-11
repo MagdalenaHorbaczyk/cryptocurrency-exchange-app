@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "9381521b-22ab-4338-a3a4-c90590669f0f",
+		"name": "crypto-exchange-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get filtered quotes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/BTC?filter=ETH,USDT",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"BTC"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "ETH,USDT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get full quotes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/BTC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"BTC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prepare exchange",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"BTC\",\r\n    \"to\": [\"ETH\", \"USDT\"],\r\n    \"amount\": 100\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/exchange",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"exchange"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/currencies"
+		}
+	]
+}
