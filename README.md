@@ -1,4 +1,4 @@
-## crypto-exchange-app
+## cryptocurrency-exchange-app
 
 Simple Spring Boot app allowing to:
 - get a list of quotes for a given cryptocurrency,
